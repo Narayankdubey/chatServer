@@ -2,7 +2,12 @@
 
 const PORT = process.env.PORT || 8000;
 
-const io = require("socket.io")(PORT)
+const io = require("socket.io")(PORT,{
+    cors: {
+      origin: "https://batiyawo.netlify.app/",
+      methods: ["GET", "POST"]
+    }
+  })
 
 const users = {};
 
